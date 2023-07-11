@@ -1,3 +1,5 @@
+-- Библиотека с функциями переформатирования данных
+
 local function fds_process(out, block, prefix)
   if isS(block) then
     for row in block:gmatch('(.-)\n') do

@@ -1,3 +1,5 @@
+-- Библиотека функций для разбора html-файлов с сайта ЦИК
+
 local td_p_ed = '[%s\r\n]-'
 local td_pat = '<td.-><?b?>?%s*(.-)%s*<?/?b?>?</td>'
 local f_tr_pat = '<tr.->%s</tr>'
