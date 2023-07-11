@@ -7,7 +7,7 @@ local function main(addreses)
     addreses[1] = nil
     addreses[2] = nil
     addreses[3] = nil
-    -- addreses[4] = nil
+    addreses[4] = nil
     addreses[5] = nil
 
     local city = 'г. Москва, г. Щербинка, '
