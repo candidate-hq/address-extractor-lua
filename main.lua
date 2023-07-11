@@ -2,7 +2,7 @@ require "core"
 
 local reformat = require "lib.reformat"
 
-local function main(addreses)
+local function main(addreses, city)
   if isT(addreses) then
     addreses[1] = nil
     addreses[2] = nil
@@ -10,16 +10,23 @@ local function main(addreses)
     addreses[4] = nil
     addreses[5] = nil
 
-    local city = 'г. Москва, г. Щербинка, '
     local exc_addreses = reformat.for_excel_table({}, addreses)
     local domr_addreses = reformat.for_domreestr_search({}, exc_addreses, city)
 
-    -- print(exc_addreses)
-    print(domr_addreses)
+    local out_path = "output/main.txt"
+    local fd = io.open(out_path, "w")
+    if fd then
+      -- print(fd:write(exc_addreses))
+      print(fd:write(domr_addreses))
+
+      io.close(fd)
+    end
   end
 end
 
-return main(require "source.adresses_scherbinka")
+return main(
+  require "source.adresses_scherbinka", 'г. Москва, г. Щербинка, '
+)
 
 -- require "module.cik_voice_load"
 
